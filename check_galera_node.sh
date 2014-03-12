@@ -67,11 +67,11 @@ if [ -z "$WARNVAL" ]; then
 fi
 
 # Gather results
-CLUSTERSIZE=$(mysql -h$mysqlhost -P$port -u$mysqluser -p$password -B -N -e "show status like 'wsrep_cluster_size'" | cut -f 2)
-NODESTATUS=$(mysql -h$mysqlhost -P$port -u$mysqluser -p$password -B -N -e "show status like 'wsrep_cluster_status'" | cut -f 2)
-NODEREADY=$(mysql -h$mysqlhost -P$port -u$mysqluser -p$password -B -N -e "show status like 'wsrep_ready'" | cut -f 2)
-NODECONNECTED=$(mysql -h$mysqlhost -P$port -u$mysqluser -p$password -B -N -e "show status like 'wsrep_connected'" | cut -f 2)
-NODESTATE=$(mysql -h$mysqlhost -P$port -u$mysqluser -p$password -B -N -e "show status like 'wsrep_local_state_comment'" | cut -f 2)
+CLUSTERSIZE=$(mysql -h$DBHOST -P$DBPORT -u$DBUSER -p$DBPASS -B -N -e "show status like 'wsrep_cluster_size'" | cut -f 2)
+NODESTATUS=$(mysql -h$DBHOST -P$DBPORT -u$DBUSER -p$DBPASS -B -N -e "show status like 'wsrep_cluster_status'" | cut -f 2)
+NODEREADY=$(mysql -h$DBHOST -P$DBPORT -u$DBUSER -p$DBPASS -B -N -e "show status like 'wsrep_ready'" | cut -f 2)
+NODECONNECTED=$(mysql -h$DBHOST -P$DBPORT -u$DBUSER -p$DBPASS -B -N -e "show status like 'wsrep_connected'" | cut -f 2)
+NODESTATE=$(mysql -h$DBHOST -P$DBPORT -u$DBUSER -p$DBPASS -B -N -e "show status like 'wsrep_local_state_comment'" | cut -f 2)
 
 # Check NODESTATUS is Primary
 if [ "$NODESTATUS" != 'Primary' ]; then
