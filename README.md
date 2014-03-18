@@ -20,3 +20,20 @@ Usage: check_galera_node.sh -u <user> -p <pass> -H <node> [OPTIONS]...
 Examples:
   ./check_galera_node.sh -u clusteradmin -p supersekrit -H thor.internal
 ```
+
+### check_cpu_snmp.sh
+
+```
+Usage: check_cpu_snmp.sh  [OPTIONS]...
+
+  -h            help! Display this message.
+  -H            Hostname/IP address          (REQUIRED)
+  -C            SNMP Community String        (OPTIONAL; defaults to PUBLIC)
+  -V            SNMP Version                 (OPTIONAL; defaults to 2c)
+  -t            Value to test                (REQUIRED; 1 (1 minute load))
+  -w            Warn value                   (OPTIONAL; defaults to -c)
+  -c            Critical value               (REQUIRED)
+
+Examples:
+  ./check_cpu_snmp.sh
+```
