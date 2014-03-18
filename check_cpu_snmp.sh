@@ -45,16 +45,16 @@ function func_1minuteload() {
   fi
 
   # Scale up values so we can compare in bash
-  $SCALED_CRITVAL = $("echo $CRITVAL\*100 | bc")
-  $SCALED_WARNVAL = $("echo $WARNVAL\*100 | bc")
-  $SCALED_RET = $("echo $RET\*100 | bc")
+  SCALED_CRITVAL=`echo $CRITVAL\*100 | bc`
+  SCALED_WARNVAL=`echo $WARNVAL\*100 | bc`
+  SCALED_RET=`echo $RET\*100 | bc`
 
   if [ $SCALED_RET -gt $SCALED_CRITVAL ]; then
-    echo "CRITIAL: 1 minute load at $RETVAL"; exit $CRIT
+    echo "CRITIAL: 1 minute load at $RET"; exit $CRIT
   elif [ $SCALED_RET -gt $SCALED_WARNVAL ]; then
-    echo "WARNING: 1 minute load at $RETVAL"; exit $WARN
+    echo "WARNING: 1 minute load at $RET"; exit $WARN
   else
-    echo "OK: 1 minute load at $RETVAL"; exit $OK
+    echo "OK: 1 minute load at $RET"; exit $OK
   fi
 }
 
