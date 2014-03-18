@@ -23,8 +23,10 @@ Examples:
 
 ### check_cpu_snmp.sh
 
+Polls a remote machine (linux only?) using SNMP for it's current CPU usage and returns appropriate alerts.
+
 ```
-Usage: check_cpu_snmp.sh  [OPTIONS]...
+Usage: check_cpu_snmp.sh -H <host> -t <test-type> -c 5 [OPTIONS]...
 
   -h            help! Display this message.
   -H            Hostname/IP address          (REQUIRED)
@@ -35,5 +37,5 @@ Usage: check_cpu_snmp.sh  [OPTIONS]...
   -c            Critical value               (REQUIRED)
 
 Examples:
-  ./check_cpu_snmp.sh
+  ./check_cpu_snmp.sh -H joker.batcave -c 2 -t 1 -C hahaha
 ```
