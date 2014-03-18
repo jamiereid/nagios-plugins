@@ -20,7 +20,7 @@ MIB_IDLETIMERAW=".1.3.6.1.4.1.2021.11.53.0"
 MIB_NICETIMERAW=".1.3.6.1.4.1.2021.11.51.0"
 
 function print_help() {
-  echo "Usage: $SCRIPTNAME  [OPTIONS]..."
+  echo "Usage: $SCRIPTNAME -H <host> -t <test-type> -c 5 [OPTIONS]..."
   echo ""
   echo "  -h            help! Display this message."
   echo "  -H            Hostname/IP address          (REQUIRED)"
@@ -31,7 +31,7 @@ function print_help() {
   echo "  -c            Critical value               (REQUIRED)"
   echo ""
   echo "Examples:"
-  echo "  ./$SCRIPTNAME "
+  echo "  ./$SCRIPTNAME -H joker.batcave -c 2 -t 1 -C hahaha"
   echo ""
   echo "Report bugs on github: https://github.com/jamiereid/nagios-plugins"
   exit $OTHER
